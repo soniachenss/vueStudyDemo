@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../src/css/index.css" >
+    <script src="../src/js/vue/vue.min.js" ></script>
+</head>
+<body>
+<div id="example">
+    <!--过滤-->
+    <input v-model="searchText" id="filterName">
+    <ul>
+        <li v-for="user in filterName">{{user.name}}</li>
+    </ul>
+</div>
+</body>
+
+<script>
+    new Vue({
+        el: '#example',
+        data: {
+            searchText: '',
+            msg: '飞机车',
+            users: [
+                { name: '出租车', tag: '1' },
+                { name: '快车', tag: '2' },
+                { name: '顺风车车', tag: '3' },
+                { name: '专车', tag: '4' }
+            ]
+
+        },
+        methods: {
+
+            },
+        computed: {
+            filterName: function(){
+                let self = this
+                return self.users.filter(function(user){
+                    alert(user.name.indexOf(self.searchText)!==-1);
+                    return user.name.indexOf(self.searchText)!==-1
+                })
+            }
+        }
+    })
+</script>
+<script src="../src/js/index.js" ></script>
+</html>

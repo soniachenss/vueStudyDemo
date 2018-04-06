@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../src/css/index.css" >
+</head>
+<body>
+<div id="example">
+    <form action="">
+        <div class="flex-out-container">
+            <div class="flex-container">
+                <div class="flex-items">
+                    姓名：<input type="text" v-model="data.name" placeholder="">
+                </div>
+                <div class="flex-items">
+                    性别：<input type="radio" v-model="data.sex" id="man" value="1"><label for="男">男</label><input type="radio" v-model="data.sex" id="female" value="2"><label
+                        for="女">女</label>
+                </div>
+                <div class="flex-items">
+                    兴趣: <input type="checkbox" v-model="data.interest" id="book" value="book"><label for="book">看书</label>
+                    <input type="checkbox" v-model="data.interest" id="swim" value="swim"><label for="swim">游泳</label>
+                    <input type="checkbox" v-model="data.interest" id="game" value="game"><label for="game">看书</label>
+                    <input type="checkbox" v-model="data.interest" id="song" value="song"><label for="song">看书</label>
+                </div>
+                <div class="flex-items">
+                    身份： <select name="" id="" v-model="data.identity">
+                    <option value="teacher" selected>教师</option>
+                    <option value="doctor">律师</option>
+                    <option value="lawyer">医生</option>
+                </select>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+    data: {{data}}
+</div>
+
+<script src="../src/js/vue/vue.min.js" ></script>
+
+<script>
+    new Vue({
+        el: '#example',
+        data: {
+            data:{
+                name: '',
+                sex: '',
+                interest: [],
+                identity: ''
+            }
+        }
+        })
+</script>
+<script src="../src/js/index.js" ></script>
+
+
+</body>
+</html>

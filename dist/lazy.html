@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../src/css/index.css" >
+    <script src="../src/js/vue/vue.min.js" ></script>
+</head>
+<body>
+<div id="example">
+    <!--<input v-model.lazy="msg" >-->
+    <!--<input v-model.lazy="msg" >-->
+
+    {{msg}}
+</div>
+</body>
+
+<script>
+    new Vue({
+        el: '#example',
+        data: {
+//            msg: '内容会在change事件后才改变！'
+            msg: '内容会在change事件后才改变！'
+        }
+    })
+</script>
+<script src="../src/js/index.js" ></script>
+</html>

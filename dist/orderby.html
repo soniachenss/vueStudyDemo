@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../src/css/index.css" >
+    <script src="../src/js/vue/vue.min.js" ></script>
+</head>
+<body>
+<div id="example">
+    <!--过滤-->
+    <ul>
+        <li v-for="user in orderUsers">{{user.name}}</li>
+    </ul>
+</div>
+</body>
+
+<script>
+    new Vue({
+        el: '#example',
+        data: {
+            users: [
+                { name: '出租车', tag: '1' },
+                { name: '快车', tag: '2' },
+                { name: '顺风车', tag: '4' },
+                { name: '专车', tag: '3' }
+            ]
+
+        },
+        methods: {
+
+            },
+        computed: {
+            orderUsers: function(){
+                return this.users.sort(function(x,y){
+                    return y['tag'].localeCompare(x['tag']);
+                })
+            }
+        }
+    })
+
+
+
+</script>
+<script src="../src/js/index.js" ></script>
+</html>
